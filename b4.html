@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    class Rectangle {
+        constructor(x, y, width, height, color) {
+            this.x = x
+            this.y = y
+            this.width = width
+            this.height = height
+            this.color = color
+        }
+    }
+
+    class Render {
+        static renderRectangle(rectangle) {
+            var canvas = document.createElement('canvas')
+                document.body.appendChild(canvas)
+                    canvas.width = window.innerWidth
+                         canvas.height = window.innerHeight
+                            var context = canvas.getContext('2d')
+
+            context.beginPath()
+                context.rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height)
+                    context.fillStyle = rectangle.color
+                        context.fill()
+        }
+    }
+
+    window.onload = function() {
+        var rectangle = new Rectangle(10, 10, 200, 100, '#000000')
+            Render.renderRectangle(rectangle)
+    }
+</script>
+</body>
+</html>

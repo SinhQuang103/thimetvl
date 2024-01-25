@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let aa=[15,4,8,1,5,4,1,63,84,1,4,86]
+    let bb=[]
+    for(let i=0; i<3; i++) {
+        let max = i;
+            for(let j=i+1; j<aa.length; j++) {
+                if(aa[j] > aa[max]) {
+                    max = j;
+            }
+        }
+        let yes = aa[i];
+            aa[i] = aa[max];
+                aa[max] = yes;
+    }
+    bb.push(aa[2]);
+        alert(bb);
+</script>
+</body>
+</html>
